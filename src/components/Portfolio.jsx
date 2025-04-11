@@ -1,0 +1,118 @@
+import React from "react";
+import PortfolioExperiences from "../assets/Portfolio/Portfolio.js";
+
+const Portfolio = () => {
+  return (
+    <div className="p-4 max-w-6xl mx-auto min-h-screen">
+      <h2 className="md:text-3xl text-center dark:text-slate-50 font-bold mb-8 text-gray-600 ">
+        PORTFOLIO - EXPERIENCES
+      </h2>
+      {/* Line left */}
+      <div className="relative md:border-l-2 md:border-red-400 dark:border-white md:pl-6 space-y-10">
+        {/* First card */}
+        <div className="relative md:pl-4">
+          {/* Date Dot */}
+          <div className="hidden md:flex md:absolute -left-[1.8rem] top-2 w-2 h-2 bg-red-500 rounded-full"></div>
+          {/* Date */}
+          <div className="text-gray-500 dark:text-white italic text-sm">
+            Now
+          </div>
+          {/* Content */}
+          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-800 dark:via-slate-800 dark:to-slate-700  p-5 rounded-md shadow-md flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
+            {/* Text */}
+            <div className="flex-1">
+              <h3 className="text-xl font-medium dark:text-white">
+                Currently looking for an opportunity as a Software Development
+                Engineer
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 whitespace-pre-line">
+                <span className="text-red-500 italic ">
+                  <a
+                    className="hover:underline cursor-pointer"
+                    href="mailto:ktanmay1130@gmail.com"
+                  >
+                    CONTECT ME .
+                  </a>{" "}
+                </span>{" "}
+                I will answer you in ~24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* First card End*/}
+
+        {PortfolioExperiences.map((exp, idx) => (
+          <div key={idx} className="relative md:pl-4">
+            {/* Date Dot */}
+            <div className="hidden md:flex md:absolute -left-[1.8rem] top-2 w-2 h-2 bg-red-500 rounded-full"></div>
+
+            {/* Date */}
+            <div className="text-gray-500 dark:text-white italic text-sm">
+              {exp.date}
+            </div>
+
+            {/* Content */}
+            <div className="bg-white dark:bg-gradient-to-r dark:from-slate-800 dark:via-slate-800 dark:to-slate-600 p-5 rounded-md shadow-md flex flex-col lg:flex-row justify-between gap-6 items-start max-lg:items-center">
+              {/* Text */}
+              <div className="flex-1">
+                <div className="group hover:text-red-500">
+                  <h3 className="text-2xl font-normal font-poppins dark:text-indigo-500 group-hover:text-red-600">
+                    {exp.company}
+                  </h3>
+                  <p className="text-lg font-medium text-gray-700 dark:text-red-600 group-hover:text-red-600">
+                    {exp.role}
+                  </p>
+                </div>
+                <ul className="list-disc ml-4">
+                  {exp.description &&
+                    exp.description.map((val, ind) => (
+                      <li
+                        key={ind}
+                        className="text-sm font-medium text-gray-600 dark:text-gray-100 mt-2 mb-3 whitespace-pre-line"
+                      >
+                        {val}
+                      </li>
+                    ))}
+                </ul>
+
+                {exp.companyUrl && (
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    className="mt-3 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 hover:underline"
+                  >
+                    More details
+                  </a>
+                )}
+
+                <h1 className="mt-5 dark:text-white">TECHNOLOGY</h1>
+                <div className="flex flex-wrap gap-2">
+                  {exp.technology &&
+                    exp.technology.map((val, ind) => (
+                      <div
+                        key={ind}
+                        className=" mt-3 px-4 py-1 font-poppins font-thin text-sm bg-red-400 text-white rounded-sm hover:bg-red-700 hover:underline"
+                      >
+                        {val}
+                      </div>
+                    ))}
+                </div>
+              </div>
+
+              {/* Logo */}
+              {exp.logo && (
+                <img
+                  src={exp.logo}
+                  alt={`${exp.company} logo`}
+                  className="h-16 w-80 object-contain"
+                />
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;
