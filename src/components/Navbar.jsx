@@ -74,7 +74,7 @@ const Navbar = () => {
     <div className="p-4 flex flex-col justify-evenly xl:fixed bg-gradient-to-r from-gray-300 via-slate-300 to-slate-400 dark:from-gray-800 dark:via-slate-800 dark:to-slate-950 h-full max-xl:min-w-full xl:w-96 xl:min-h-screen  dark:text-white">
       <div className="flex justify-between items-center ">
         <div className="flex items-center">
-          <img src={logo} alt="" />
+          <img className="" src={logo} alt="" />
           {/* <span className="text-pink-800">anmay</span> */}
         </div>
 
@@ -119,12 +119,14 @@ const Navbar = () => {
               onClick={() => setMenu("portfolio")}
               // className="flex justify-center items-center"
               className={navLink}
-              to="/portfolio"
+              to="/"
             >
               <li className={li}>
                 <FaHouseUser /> <span>Portfolio</span>
               </li>
-              {menu === "portfolio" && <div className={`${trangleShape} `}></div>}
+              {menu === "portfolio" && (
+                <div className={`${trangleShape} `}></div>
+              )}
             </NavLink>
 
             {/* ABOUT */}
@@ -235,16 +237,36 @@ const Navbar = () => {
         <div>
           <ul className="flex gap-2">
             <li>
-              <BsLinkedin className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              <a
+                href="https://www.linkedin.com/in/myselftanmay/" // LinkedIn profile
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BsLinkedin className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              </a>
             </li>
             <li>
-              <FaGithub className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              <a
+                href="https://github.com/itanmay728" // GitHub
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              </a>
             </li>
             <li>
-              <SiLeetcode className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              <a
+                href="https://leetcode.com/u/Tanmay728/" // LeetCode profile
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiLeetcode className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              </a>
             </li>
             <li>
-              <MdEmail className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              <a href="mailto:ktanmay1130@gmail.com">
+                <MdEmail className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+              </a>
             </li>
           </ul>
         </div>
@@ -262,7 +284,7 @@ const Navbar = () => {
               <NavLink
                 onClick={() => (setMenu("portfolio"), setIsOpen(!isOpen))}
                 className={navLink}
-                to="/portfolio"
+                to="/"
               >
                 <li className={`${li} justify-end`}>
                   <span>Portfolio</span> <FaHouseUser />
@@ -289,13 +311,7 @@ const Navbar = () => {
                 </li>
               </NavLink>
 
-              <a
-                
-                
-                href=""
-                target="_blank"
-                className="w-full"
-              >
+              <a href="" target="_blank" className="w-full">
                 <li className={`${li} justify-end text-indigo-600`}>
                   <span>Resume</span> <MdFindInPage />
                 </li>

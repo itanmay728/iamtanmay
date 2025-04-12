@@ -56,10 +56,10 @@ const Portfolio = () => {
               {/* Text */}
               <div className="flex-1">
                 <div className="group hover:text-red-500">
-                  <h3 className="text-2xl font-normal font-poppins dark:text-indigo-500 group-hover:text-red-600">
+                  <h3 className="text-2xl font-medium dark:text-gray-50 group-hover:text-red-600">
                     {exp.company}
                   </h3>
-                  <p className="text-lg font-medium text-gray-700 dark:text-red-600 group-hover:text-red-600">
+                  <p className="text-lg font-medium text-[#4CAF50]  group-hover:text-red-600">
                     {exp.role}
                   </p>
                 </div>

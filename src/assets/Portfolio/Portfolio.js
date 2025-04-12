@@ -5,7 +5,7 @@ import anterisLogo from "./companyLogos/AnterisLogo.png"
 const PortfolioExperiences = [
   {
     date: "Oct 2023 - Present",
-    company: "Anteris Software Solutions Pvt Ltd",
+    company: "Anteris Software Solutions",
     logo: anterisLogo,
     role: "Software Development Engineer",
     description: [

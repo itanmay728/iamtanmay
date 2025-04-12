@@ -15,7 +15,7 @@ function App() {
       element : <Layout/>,
       children : [
         {
-          path: "/portfolio",
+          path: "/",
           element : <Portfolio />
         },
         {
