@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "/logo.svg";
+import Tlogo from "/T-logo.png";
 import tanmay_photo from "../assets/images/Tanmay_photo.jpg";
 import { TypeAnimation } from "react-type-animation";
 import { FaHouseUser, FaGithub, FaBars } from "react-icons/fa6";
@@ -74,7 +75,7 @@ const Navbar = () => {
     <div className="p-4 flex flex-col justify-evenly xl:fixed bg-gradient-to-r from-gray-300 via-slate-300 to-slate-400 dark:from-gray-800 dark:via-slate-800 dark:to-slate-950 h-full max-xl:min-w-full xl:w-96 xl:min-h-screen  dark:text-white">
       <div className="flex justify-between items-center ">
         <div className="flex items-center">
-          <img className="" src={logo} alt="" />
+         <img src={logo} alt="" />
           {/* <span className="text-pink-800">anmay</span> */}
         </div>
 

@@ -34,7 +34,7 @@ const Portfolio = () => {
                     CONTECT ME .
                   </a>{" "}
                 </span>{" "}
-                I will answer you in ~24 hours.
+                I will answer you within ~24 hours.
               </p>
             </div>
           </div>
