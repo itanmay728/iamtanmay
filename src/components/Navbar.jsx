@@ -21,20 +21,21 @@ const Navbar = () => {
 
   // ! ================= Theme handled =================
 
-  let [themeMode, setThemeMode] = useState("light");
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  console.log(savedTheme);
+  let [themeMode, setThemeMode] = useState(savedTheme);
   let handleThemeChange = (e) => {
     let darkModeStatusIs = e.currentTarget.checked;
-
-    if (darkModeStatusIs) {
-      setThemeMode("dark");
-    } else {
-      setThemeMode("light");
-    }
+    const newTheme = darkModeStatusIs ? 'dark' : 'light';
+    setThemeMode(newTheme);
   };
 
   useEffect(() => {
     document.querySelector("html").classList.remove("dark", "light");
     document.querySelector("html").classList.add(themeMode);
+
+    // Save the theme to localStorage
+    localStorage.setItem('theme', themeMode);
   }, [themeMode]);
 
   //   Mobile isOpen
@@ -55,7 +56,7 @@ const Navbar = () => {
   };
 
   let iconCSS =
-    "h-7 w-7 text-gray-600 cursor-pointer hover:text-white dark:text-gray-600 dark:hover:text-white";
+    "h-7 w-7 text-gray-600 cursor-pointer hover:text-white dark:text-gray-500 dark:hover:text-white";
 
   let typing = (
     <TypeAnimation
@@ -74,7 +75,6 @@ const Navbar = () => {
       wrapper="span"
       speed={50}
       repeat={Infinity}
-      
     />
   );
 
@@ -114,7 +114,10 @@ const Navbar = () => {
         <div className="">
           <h1 className="text-center text-3xl font-medium">Tanmay kumar</h1>
           <p className="text-lg max-xl:text-center xl:ml-24 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            {typing}<span className="typewriter-cursor animate-blink-fast text-purple-500 font-bold">|</span>
+            {typing}
+            <span className="max-lg:hidden typewriter-cursor animate-blink-fast text-purple-500 font-bold">
+              |
+            </span>
           </p>
         </div>
       </div>
@@ -174,7 +177,7 @@ const Navbar = () => {
               target="_blank"
             >
               <li className={`${li} text-indigo-600`}>
-                <FileSearch dInPage /> <span>Resume</span>
+                <FileSearch /> <span>Resume</span>
               </li>
             </a>
           </ul>
@@ -242,9 +245,11 @@ const Navbar = () => {
       </div>
 
       {/* ------- Mobile ------- */}
-      <div className="hidden max-xl:flex justify-between items-center p-2 m-1">
+      <div
+        className={` hidden max-xl:flex justify-between items-center mt-3 mb-3`}
+      >
         {/* get in touch icon */}
-        <div>
+        <div className="ml-2">
           <ul className="flex gap-2">
             <li>
               <a

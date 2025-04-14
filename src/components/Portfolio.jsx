@@ -4,7 +4,7 @@ import PortfolioExperiences from "../assets/Portfolio/Portfolio.js";
 
 const Portfolio = () => {
   return (
-    <div className="p-4 max-w-6xl mx-auto min-h-screen">
+    <div className="p-4 max-w-6xl mx-auto min-h-screen overflow-x-hidden">
       <h2 className="md:text-3xl text-center dark:text-slate-50 font-bold mb-8 text-gray-600 ">
         PORTFOLIO - EXPERIENCES
       </h2>
@@ -60,6 +60,7 @@ const Portfolio = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.2 }}
             viewport={{ once: false }}
           >
+           
             {/* Date Dot */}
             <div className="hidden md:flex md:absolute -left-[1.8rem] top-2 w-2 h-2 bg-red-500 rounded-full"></div>
 
@@ -126,7 +127,9 @@ const Portfolio = () => {
                 />
               )}
             </div>
+            
           </motion.div>
+          
         ))}
       </div>
     </div>

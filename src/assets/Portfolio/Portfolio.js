@@ -9,9 +9,9 @@ const PortfolioExperiences = [
     logo: anterisLogo,
     role: "Software Development Engineer",
     description: [
-      "Designed & Developed a web app from scratch with back-end on Spring boot, Hibernate, MySQL & front-end on Thymeleaf, HTML, CSS & Bootstrap",
-      "Added some features like role based login, Fetching data from mysql database. users can read, delete & update data according to their roles.",
-      "Search employee by there email, Added a QR code When someone scan that QR Code a public form will opened user can also download that QR Code and print&past anywhere. Added Auto mail sender",
+      "Developed an internal web-based tool that increasing team productivity.",
+      "Enhanced UI for an internal tool by adding toggle sort feature on a dynamic table.",
+      "Fixed bugs from existing websites and implemented enhancements that improve functionality and efficiency by 25%",
     ],
     companyUrl: "",
     technology: ["Java", "JavaScript", , "React.js", "Spring Boot" , "Hibernate","MySQL"]
