@@ -18,3 +18,4 @@ If you are developing a production application, we recommend using TypeScript an
 - react-router-dom
 - react-icons
 - react-type-animation
+- framer-motion

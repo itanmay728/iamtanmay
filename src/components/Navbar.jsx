@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import logo from "/logo.svg";
-import Tlogo from "/T-logo.png";
 import tanmay_photo from "../assets/images/Tanmay_photo.jpg";
 import { TypeAnimation } from "react-type-animation";
-import { FaHouseUser, FaGithub, FaBars } from "react-icons/fa6";
-import { MdFindInPage, MdEmail } from "react-icons/md";
-import { FaAddressBook } from "react-icons/fa";
-import { TbAdjustmentsCog } from "react-icons/tb";
-import { BsLinkedin } from "react-icons/bs";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import { NavLink } from "react-router-dom";
+
+// lucide-icons
+import {
+  House,
+  NotebookText,
+  FolderGit2,
+  FileSearch,
+  Menu,
+  Mail,
+} from "lucide-react";
+
 const Navbar = () => {
   let [menu, setMenu] = useState("portfolio");
 
@@ -38,7 +44,7 @@ const Navbar = () => {
   let trangleShape =
     "translate-x-4 w-0 h-0 border-t-[9px] border-b-[9px] border-r-[8px] border-t-transparent border-b-transparent dark:border-r-slate-500 border-r-white";
   let li =
-    "flex items-center gap-5 p-3 hover:bg-gradient-to-r from-slate-200 rounded-md w-full dark:hover:bg-gradient-to-r dark:from-slate-600";
+    "flex items-center gap-5 p-2 hover:bg-gradient-to-r from-slate-200 rounded-md w-full dark:hover:bg-gradient-to-r dark:from-slate-600";
 
   let navLink = ({ isActive }) => {
     return `flex justify-center items-center w-full ${
@@ -49,7 +55,7 @@ const Navbar = () => {
   };
 
   let iconCSS =
-    "h-7 w-7 text-gray-600 cursor-pointer hover:text-white dark:text-gray-400 dark:hover:text-white";
+    "h-7 w-7 text-gray-600 cursor-pointer hover:text-white dark:text-gray-600 dark:hover:text-white";
 
   let typing = (
     <TypeAnimation
@@ -68,14 +74,15 @@ const Navbar = () => {
       wrapper="span"
       speed={50}
       repeat={Infinity}
+      
     />
   );
 
   return (
-    <div className="p-4 flex flex-col justify-evenly xl:fixed bg-gradient-to-r from-gray-300 via-slate-300 to-slate-400 dark:from-gray-800 dark:via-slate-800 dark:to-slate-950 h-full max-xl:min-w-full xl:w-96 xl:min-h-screen  dark:text-white">
+    <div className="p-4 flex flex-col justify-evenly xl:fixed bg-gradient-to-l from-gray-300 via-slate-300 to-slate-400 dark:from-gray-800 dark:via-slate-800 dark:to-slate-950 h-full max-xl:min-w-full xl:w-96 xl:min-h-screen  dark:text-white">
       <div className="flex justify-between items-center ">
         <div className="flex items-center">
-         <img src={logo} alt="" />
+          <img src={logo} alt="" />
           {/* <span className="text-pink-800">anmay</span> */}
         </div>
 
@@ -106,7 +113,9 @@ const Navbar = () => {
 
         <div className="">
           <h1 className="text-center text-3xl font-medium">Tanmay kumar</h1>
-          <p className="text-lg max-xl:text-center xl:ml-24 ">{typing}</p>
+          <p className="text-lg max-xl:text-center xl:ml-24 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            {typing}<span className="typewriter-cursor animate-blink-fast text-purple-500 font-bold">|</span>
+          </p>
         </div>
       </div>
 
@@ -122,8 +131,8 @@ const Navbar = () => {
               className={navLink}
               to="/"
             >
-              <li className={li}>
-                <FaHouseUser /> <span>Portfolio</span>
+              <li className={`${li} `}>
+                <House /> <span>Portfolio</span>
               </li>
               {menu === "portfolio" && (
                 <div className={`${trangleShape} `}></div>
@@ -138,7 +147,7 @@ const Navbar = () => {
               to="/about"
             >
               <li className={li}>
-                <FaAddressBook /> <span>About</span>
+                <NotebookText /> <span>About</span>
               </li>
               {menu === "about" && <div className={trangleShape}></div>}
             </NavLink>
@@ -151,7 +160,7 @@ const Navbar = () => {
               to="/project"
             >
               <li className={li}>
-                <TbAdjustmentsCog /> <span>Projects</span>
+                <FolderGit2 /> <span>Projects</span>
               </li>
               {menu === "project" && <div className={trangleShape}></div>}
             </NavLink>
@@ -165,7 +174,7 @@ const Navbar = () => {
               target="_blank"
             >
               <li className={`${li} text-indigo-600`}>
-                <MdFindInPage /> <span>Resume</span>
+                <FileSearch dInPage /> <span>Resume</span>
               </li>
             </a>
           </ul>
@@ -188,7 +197,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsLinkedin className={iconCSS} />
+                <FaLinkedinIn className={iconCSS} />
               </a>
             </li>
 
@@ -217,7 +226,7 @@ const Navbar = () => {
             {/* Email */}
             <li>
               <a href="mailto:ktanmay1130@gmail.com">
-                <MdEmail className={iconCSS} />
+                <Mail className={iconCSS} />
               </a>
             </li>
           </ul>
@@ -243,7 +252,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsLinkedin className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+                <FaLinkedinIn className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
               </a>
             </li>
             <li>
@@ -266,14 +275,14 @@ const Navbar = () => {
             </li>
             <li>
               <a href="mailto:ktanmay1130@gmail.com">
-                <MdEmail className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+                <Mail className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
               </a>
             </li>
           </ul>
         </div>
 
         <div onClick={() => setIsOpen(!isOpen)}>
-          <FaBars className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
+          <Menu className="h-5 w-5 text-gray-700 cursor-pointer dark:text-gray-400" />
         </div>
       </div>
 
@@ -288,7 +297,7 @@ const Navbar = () => {
                 to="/"
               >
                 <li className={`${li} justify-end`}>
-                  <span>Portfolio</span> <FaHouseUser />
+                  <span>Portfolio</span> <House />
                 </li>
               </NavLink>
 
@@ -298,7 +307,7 @@ const Navbar = () => {
                 to="/about"
               >
                 <li className={`${li} justify-end`}>
-                  <span>About</span> <FaAddressBook />
+                  <span>About</span> <NotebookText />
                 </li>
               </NavLink>
 
@@ -308,13 +317,13 @@ const Navbar = () => {
                 to="/project"
               >
                 <li className={`${li} justify-end`}>
-                  <span>Projects</span> <TbAdjustmentsCog />
+                  <span>Projects</span> <FolderGit2 />
                 </li>
               </NavLink>
 
               <a href="" target="_blank" className="w-full">
                 <li className={`${li} justify-end text-indigo-600`}>
-                  <span>Resume</span> <MdFindInPage />
+                  <span>Resume</span> <FileSearch />
                 </li>
               </a>
             </ul>

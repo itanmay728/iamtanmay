@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import PortfolioExperiences from "../assets/Portfolio/Portfolio.js";
 
 const Portfolio = () => {
@@ -7,23 +8,32 @@ const Portfolio = () => {
       <h2 className="md:text-3xl text-center dark:text-slate-50 font-bold mb-8 text-gray-600 ">
         PORTFOLIO - EXPERIENCES
       </h2>
+
       {/* Line left */}
       <div className="relative md:border-l-2 md:border-red-400 dark:border-white md:pl-6 space-y-10">
+
         {/* First card */}
-        <div className="relative md:pl-4">
+        <motion.div
+          className="relative md:pl-4"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false }}
+        >
           {/* Date Dot */}
           <div className="hidden md:flex md:absolute -left-[1.8rem] top-2 w-2 h-2 bg-red-500 rounded-full"></div>
+
           {/* Date */}
           <div className="text-gray-500 dark:text-white italic text-sm">
             Now
           </div>
+
           {/* Content */}
           <div className="bg-white dark:bg-gradient-to-r dark:from-slate-800 dark:via-slate-800 dark:to-slate-700  p-5 rounded-md shadow-md flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
             {/* Text */}
             <div className="flex-1">
               <h3 className="text-xl font-medium dark:text-white">
-                Currently looking for an opportunity as a Software Development
-                Engineer
+                Currently looking for an opportunity as a Software Development Engineer
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 whitespace-pre-line">
                 <span className="text-red-500 italic ">
@@ -32,17 +42,24 @@ const Portfolio = () => {
                     href="mailto:ktanmay1130@gmail.com"
                   >
                     CONTECT ME .
-                  </a>{" "}
+                  </a>
                 </span>{" "}
                 I will answer you within ~24 hours.
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* First card End*/}
 
         {PortfolioExperiences.map((exp, idx) => (
-          <div key={idx} className="relative md:pl-4">
+          <motion.div
+            key={idx}
+            className="relative md:pl-4"
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.2 }}
+            viewport={{ once: false }}
+          >
             {/* Date Dot */}
             <div className="hidden md:flex md:absolute -left-[1.8rem] top-2 w-2 h-2 bg-red-500 rounded-full"></div>
 
@@ -59,10 +76,11 @@ const Portfolio = () => {
                   <h3 className="text-2xl font-medium dark:text-gray-50 group-hover:text-red-600">
                     {exp.company}
                   </h3>
-                  <p className="text-lg font-medium text-[#4CAF50]  group-hover:text-red-600">
+                  <p className="text-lg font-medium text-[#4CAF50] group-hover:text-red-600">
                     {exp.role}
                   </p>
                 </div>
+
                 <ul className="list-disc ml-4">
                   {exp.description &&
                     exp.description.map((val, ind) => (
@@ -91,7 +109,7 @@ const Portfolio = () => {
                     exp.technology.map((val, ind) => (
                       <div
                         key={ind}
-                        className=" mt-3 px-4 py-1 font-poppins font-thin text-sm bg-red-400 text-white rounded-sm hover:bg-red-700 hover:underline"
+                        className="mt-3 px-4 py-1 font-poppins font-thin text-sm bg-red-400 text-white rounded-sm hover:bg-red-700 hover:underline"
                       >
                         {val}
                       </div>
@@ -108,11 +126,11 @@ const Portfolio = () => {
                 />
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
 };
 
-export default Portfolio;
+export default Portfolio
