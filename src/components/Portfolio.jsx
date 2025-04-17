@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import PortfolioExperiences from "../assets/Portfolio/Portfolio.js";
+import PortfolioExperiences from "../assets/DB/Portfolio/Portfolio.js";
 
 const Portfolio = () => {
   return (
-    <div className="p-4 max-w-6xl mx-auto min-h-screen overflow-x-hidden">
+    <div className="p-4 max-w-7xl mx-auto min-h-screen overflow-x-hidden">
       <h2 className="md:text-3xl text-center dark:text-slate-50 font-bold mb-8 text-gray-600 ">
         PORTFOLIO - EXPERIENCES
       </h2>
@@ -18,7 +18,7 @@ const Portfolio = () => {
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
         >
           {/* Date Dot */}
           <div className="hidden md:flex md:absolute -left-[1.8rem] top-2 w-2 h-2 bg-red-500 rounded-full"></div>
@@ -110,7 +110,7 @@ const Portfolio = () => {
                     exp.technology.map((val, ind) => (
                       <div
                         key={ind}
-                        className="mt-3 px-4 py-1 font-poppins font-thin text-sm bg-red-400 text-white rounded-sm hover:bg-red-700 hover:underline"
+                        className="mt-3 px-4 py-1 font-poppins font-thin text-sm bg-green-500 text-white rounded-sm hover:bg-red-700 hover:underline"
                       >
                         {val}
                       </div>

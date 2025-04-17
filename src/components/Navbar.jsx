@@ -5,6 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import { NavLink } from "react-router-dom";
+import resumeLink from "../assets/DB/resumeLink";
 
 // lucide-icons
 import {
@@ -79,7 +80,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="p-4 flex flex-col justify-evenly xl:fixed bg-gradient-to-l from-gray-300 via-slate-300 to-slate-400 dark:from-gray-800 dark:via-slate-800 dark:to-slate-950 h-full max-xl:min-w-full xl:w-96 xl:min-h-screen  dark:text-white">
+    <div className="p-4 flex flex-col justify-evenly xl:fixed bg-gradient-to-l from-gray-300 via-slate-300 to-slate-400 dark:from-gray-800 dark:via-slate-800 dark:to-slate-950 h-full max-xl:min-w-full xl:w-96 xl:min-h-screen  dark:text-white ">
       <div className="flex justify-between items-center ">
         <div className="flex items-center">
           <img src={logo} alt="" />
@@ -115,9 +116,6 @@ const Navbar = () => {
           <h1 className="text-center text-3xl font-medium">Tanmay kumar</h1>
           <p className="text-lg max-xl:text-center xl:ml-24 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             {typing}
-            <span className="max-lg:hidden typewriter-cursor animate-blink-fast text-purple-500 font-bold">
-              |
-            </span>
           </p>
         </div>
       </div>
@@ -173,7 +171,7 @@ const Navbar = () => {
             <a
               onClick={() => setMenu("resume")}
               className={navLink}
-              href=""
+              href= {resumeLink}
               target="_blank"
             >
               <li className={`${li} text-indigo-600`}>
@@ -184,11 +182,11 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          <div className="flex-grow border-t border-gray-200"></div>
+          <div className="flex-grow border-t border-gray-400"></div>
           <span className="mx-4 text-gray-500 dark:text-gray-400 font-semibold">
             Get in Touch
           </span>
-          <div className="flex-grow border-t border-gray-200"></div>
+          <div className="flex-grow border-t border-gray-400"></div>
         </div>
 
         <div className="m-7">
@@ -249,8 +247,8 @@ const Navbar = () => {
         className={` hidden max-xl:flex justify-between items-center mt-3 mb-3`}
       >
         {/* get in touch icon */}
-        <div className="ml-2">
-          <ul className="flex gap-2">
+        <div className="w-32 ">
+          <ul className="flex justify-evenly">
             <li>
               <a
                 href="https://www.linkedin.com/in/myselftanmay/" // LinkedIn profile
@@ -326,7 +324,7 @@ const Navbar = () => {
                 </li>
               </NavLink>
 
-              <a href="" target="_blank" className="w-full">
+              <a href={resumeLink} target="_blank" className="w-full">
                 <li className={`${li} justify-end text-indigo-600`}>
                   <span>Resume</span> <FileSearch />
                 </li>

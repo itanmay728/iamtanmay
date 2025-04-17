@@ -20,7 +20,7 @@ const Layout = () => {
   
   return (
     
-    <section className="xl:flex gap-3 text-base leading-relaxed font-arial">
+    <section className="xl:flex gap-3 text-base leading-relaxed font-arial overflow-hidden">
       <LoadingScreen isLoading = {isLoading}/>
         <Navbar />
         <div className='xl:ml-96 w-full bg-slate-50 dark:bg-slate-500'>

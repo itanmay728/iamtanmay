@@ -2,7 +2,7 @@ import Layout from "./components/Layout"
 import Navbar from "./components/Navbar"
 import { createBrowserRouter, RouterProvider, Routes } from "react-router-dom"
 import Portfolio from "./components/Portfolio"
-import About from "./components/About"
+import About from "./components/About/About"
 import Project from "./components/Project"
 
 
