@@ -45,12 +45,12 @@ export default function Skills() {
         {skills.map((skill, index) => (
           <motion.div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0}}
+          whileInView={{ opacity: 1}}
           transition={{ delay: index * 0.05, duration: 0.5 }}
           whileHover={{ scale: 1.05, transition: 0.1}}
           viewport={{ once: false }}
-          className="group transform transition duration-300 hover:scale-110 hover:shadow-xl hover:border-green-400 bg-zinc-100 dark:bg-zinc-900 border border-green-600 p-4 rounded-xl shadow-md flex flex-col items-center justify-center"
+          className="group transform transition duration-300 hover:scale-110 hover:shadow-xl hover:border-green-400 bg-zinc-100 dark:bg-zinc-900 border border-green-600 p-4 rounded-xl shadow-md flex flex-col items-center justify-center "
         >
           <div className="text-4xl mb-2 transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110">
             {skill.icon}

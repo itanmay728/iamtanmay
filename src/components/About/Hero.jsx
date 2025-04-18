@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TanmayImg from "../../assets/images/imgTanmay.jpg";
-import resumeLink from '../../assets/DB/resumeLink'
+import {resumeLink} from '../../assets/DB/Links.js'
 
 // icons
 import {
@@ -37,8 +37,7 @@ const Hero = () => {
         </div>
 
         <p className="text-sm sm:text-base text-black dark:text-white">
-          I have more than 2 years' of experience working as a software developer
-          and building software for clients. Below is a quick overview of my
+          I have more than 2 years' of experience working as a software developer. Below is a quick overview of my
           main technical skill sets and technologies I use.
         </p>
 

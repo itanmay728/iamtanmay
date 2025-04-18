@@ -1,21 +1,33 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<h1 align="center">💼 Personal Portfolio</h1>
 
 
-## tech installed
+```
+- ✉️ ktanmay1130@gmail.com
+- 📞 6202907277
+```
 
-- tailwind css
-- react-router-dom
-- react-icons
-- react-type-animation
-- framer-motion
+This is my personal portfolio website built using **React**, with **React Router** for client-side navigation. It showcases my projects, skills, resume, and contact information.
+---
+
+## 🚀 Features
+
+- 🧭 Seamless navigation with **React Router**
+- 🎨 Responsive design with **Tailwind CSS**
+- 🧑‍💻 Dynamic sections: About, Projects, Resume,
+- 🌙 **Dark mode** support
+- 🔗 External links to GitHub, LinkedIn, LeetCode, Resume
+
+---
+
+## 🛠 Tech Stack
+
+- **React** (By using Vite)
+- **React Router**
+- **React-type-animation**
+- **React-icons**
+- **Lucide icons**
+- **Tailwind CSS**
+- **Framer Motion** (for smooth animations)
+---
+
+

@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import { NavLink } from "react-router-dom";
-import resumeLink from "../assets/DB/resumeLink";
+import { resumeLink , gitHubLink , linkedInLink, leetCodeLink} from "../assets/DB/Links";
 
 // lucide-icons
 import {
@@ -23,7 +23,6 @@ const Navbar = () => {
   // ! ================= Theme handled =================
 
   const savedTheme = localStorage.getItem('theme') || 'light';
-  console.log(savedTheme);
   let [themeMode, setThemeMode] = useState(savedTheme);
   let handleThemeChange = (e) => {
     let darkModeStatusIs = e.currentTarget.checked;
@@ -168,9 +167,7 @@ const Navbar = () => {
 
             {/* RESUME */}
 
-            <a
-              onClick={() => setMenu("resume")}
-              className={navLink}
+            <a              
               href= {resumeLink}
               target="_blank"
             >
@@ -194,7 +191,7 @@ const Navbar = () => {
             {/* LinkedIn */}
             <li>
               <a
-                href="https://www.linkedin.com/in/myselftanmay/" // LinkedIn profile
+                href={linkedInLink} // LinkedIn profile
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -205,7 +202,7 @@ const Navbar = () => {
             {/* GitHub */}
             <li>
               <a
-                href="https://github.com/itanmay728" // GitHub
+                href={gitHubLink} // GitHub
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -216,7 +213,7 @@ const Navbar = () => {
             {/* LeetCode */}
             <li>
               <a
-                href="https://leetcode.com/u/Tanmay728/" // LeetCode profile
+                href={leetCodeLink} // LeetCode profile
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -251,7 +248,7 @@ const Navbar = () => {
           <ul className="flex justify-evenly">
             <li>
               <a
-                href="https://www.linkedin.com/in/myselftanmay/" // LinkedIn profile
+                href={linkedInLink} // LinkedIn profile
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -260,7 +257,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="https://github.com/itanmay728" // GitHub
+                href={gitHubLink} // GitHub
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -269,7 +266,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="https://leetcode.com/u/Tanmay728/" // LeetCode profile
+                href={leetCodeLink} // LeetCode profile
                 target="_blank"
                 rel="noopener noreferrer"
               >

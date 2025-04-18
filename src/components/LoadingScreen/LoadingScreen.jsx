@@ -6,7 +6,6 @@ import TextAnimation from './TextAnimation';
 
 export function LoadingScreen(props) {
     let {isLoading} = props
-    console.log(isLoading);
   return (
     <AnimatePresence>
       {isLoading && (
